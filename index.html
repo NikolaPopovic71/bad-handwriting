@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bad Handwriting</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="input-section">
+        <div class="label-and-buttons">
+          <label for="textInput">Type your text:</label>
+          <div class="controls-group">
+            <div class="style-control">
+              <label for="styleSelect">Handwriting style:</label>
+              <select id="styleSelect">
+                <option value="chaotic">Chaotic Mix</option>
+                <option value="flowing">Flowing</option>
+                <option value="pure-random">Pure Random</option>
+                <option value="elegant">Elegant</option>
+                <option value="playful">Playful</option>
+              </select>
+            </div>
+            <div class="color-control">
+              <label for="colorPicker">Output color:</label>
+              <input type="color" id="colorPicker" value="#ff4444" />
+            </div>
+            <div class="button-group">
+              <button id="clearBtn" class="btn btn-clear">Clear</button>
+              <button id="copyBtn" class="btn btn-copy">Copy Output</button>
+            </div>
+          </div>
+        </div>
+        <textarea id="textInput" placeholder="Start typing..."></textarea>
+      </div>
+      
+      <div class="display-section">
+        <p id="output"></p>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
