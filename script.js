@@ -140,6 +140,7 @@ const outputElement = document.querySelector('#output');
 const clearBtn = document.querySelector('#clearBtn');
 const copyBtn = document.querySelector('#copyBtn');
 const colorPicker = document.querySelector('#colorPicker');
+const colorPickerBg = document.querySelector('#colorPicker-bg');
 const styleSelect = document.querySelector('#styleSelect');
 
 // Start with empty textarea
@@ -154,12 +155,19 @@ function applyColorToOutput(color) {
   });
 }
 
+// Function to apply background color to display section
+function applyColorToBg(color) {
+  const displaySection = document.querySelector('.display-section');
+  displaySection.style.backgroundColor = color;
+}
+
 // Function to update output with current style
 function updateOutput() {
   const text = textInput.value;
   if (text.length > 0) {
     wrapLetters(text, outputElement, 12, styleSelect.value);
     applyColorToOutput(colorPicker.value);
+    applyColorToBg(colorPickerBg.value);  // Add this line
   } else {
     outputElement.innerHTML = '';
   }
@@ -174,6 +182,11 @@ styleSelect.addEventListener('change', updateOutput);
 // Listen for color changes
 colorPicker.addEventListener('input', (e) => {
   applyColorToOutput(e.target.value);
+});
+
+// Add event listener for background color changes (add with your other event listeners)
+colorPickerBg.addEventListener('input', (e) => {
+  applyColorToBg(e.target.value);
 });
 
 // Clear button
