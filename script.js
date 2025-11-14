@@ -192,7 +192,11 @@ colorPickerBg.addEventListener('input', (e) => {
 // Clear button
 clearBtn.addEventListener('click', () => {
   textInput.value = '';
+  colorPicker.value = '#ff4444';
+  colorPickerBg.value = '#f0f0f0';
+  styleSelect.value = 'chaotic';  // Reset style to default
   outputElement.innerHTML = '';
+  applyColorToBg(colorPickerBg.value);  // Apply the reset background color
 });
 
 // Copy button - copy styled output as image
@@ -229,3 +233,4 @@ copyBtn.addEventListener('click', async () => {
     alert('Error creating image');
   }
 });
+
